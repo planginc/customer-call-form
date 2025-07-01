@@ -276,7 +276,7 @@
         </div>
         
         <div class="form-container">
-            <form id="customerCallForm" action="https://n8n.digitaleasemedia.com/webhook/customer-call-form" method="POST">
+            <form action="https://n8n.digitaleasemedia.com/webhook/customer-call-form" method="POST">
                 
                 <!-- Customer Information Section -->
                 <div class="form-section">
@@ -439,21 +439,6 @@ Claude will automatically extract:
             document.getElementById('leadPasteText').value = '';
             document.getElementById('leadPasteArea').classList.remove('active');
         }
-        
-        // Form submission handling
-        document.getElementById('customerCallForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here's where the N8N webhook will be called
-            console.log('Form data ready for N8N:', data);
-            
-            // Placeholder for now - will be replaced with actual webhook URL
-            alert('Form submitted! In Sprint 2, this will trigger the N8N automation workflow.');
-        });
     </script>
 </body>
 </html>
