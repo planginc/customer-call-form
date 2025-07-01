@@ -10,244 +10,228 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
         }
-
+        
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-
+        
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
         }
-
+        
         .header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-
+        
         .header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            line-height: 1.6;
         }
-
+        
+        .workflow-explanation {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            margin: 20px -30px -40px -30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .workflow-explanation h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .workflow-explanation p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
         .form-container {
-            padding: 40px;
+            padding: 40px 30px;
         }
-
-        .section {
+        
+        .form-section {
             margin-bottom: 35px;
-            padding: 25px;
-            border-radius: 12px;
-            border: 2px solid #f0f4f8;
-            background: #fafbfc;
         }
-
+        
         .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid #f0f4f8;
         }
-
-        .section-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+        
+        .section-header h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 18px;
-            color: white;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            gap: 10px;
         }
-
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #2d3748;
-        }
-
+        
         .section-subtitle {
-            font-size: 0.9rem;
             color: #718096;
-            margin-top: 5px;
+            font-size: 0.95rem;
+            margin: 0;
         }
-
+        
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
+        
         .form-group {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
         }
-
+        
         .form-group.full-width {
             grid-column: 1 / -1;
         }
-
-        .form-label {
-            display: block;
+        
+        label {
             font-weight: 600;
             color: #4a5568;
             margin-bottom: 8px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
-
-        .form-input {
-            width: 100%;
+        
+        input, textarea, select {
             padding: 12px 15px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
             font-size: 1rem;
-            background: white;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-textarea {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            background: white;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            min-height: 120px;
-            resize: vertical;
             font-family: inherit;
         }
-
-        .form-textarea:focus {
+        
+        input:focus, textarea:focus, select:focus {
             outline: none;
             border-color: #667eea;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
-
-        .transcript-textarea {
+        
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        textarea#call_transcript {
             min-height: 200px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
-
-        .claude-section {
-            background: #f0f9ff;
-            border-color: #7dd3fc;
+        
+        .lead-paste-container {
+            margin-bottom: 20px;
         }
-
-        .claude-section .section-icon {
-            background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
-        }
-
-        .claude-field {
-            background: #e0f2fe;
-            border: 2px dashed #0891b2;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            color: #0c4a6e;
-            font-style: italic;
-        }
-
-        .help-text {
-            font-size: 0.85rem;
-            color: #718096;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .lead-paste-area {
-            background: #f7fafc;
-            border: 2px dashed #cbd5e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .paste-button {
-            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        
+        .toggle-button {
+            background: #667eea;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
-            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            transition: background 0.3s ease;
         }
-
-        .paste-button:hover {
-            transform: translateY(-2px);
+        
+        .toggle-button:hover {
+            background: #5a67d8;
         }
-
-        .submit-section {
-            background: white;
+        
+        .lead-paste-area {
+            display: none;
+            background: #f8fafc;
+            border: 2px dashed #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .lead-paste-area.active {
+            display: block;
+        }
+        
+        .lead-paste-area h4 {
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        
+        .lead-paste-area textarea {
+            width: 100%;
+            min-height: 100px;
+            margin-bottom: 10px;
+        }
+        
+        .parse-button {
+            background: #48bb78;
+            color: white;
             border: none;
-            padding: 30px;
-            text-align: center;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
         }
-
+        
+        .parse-button:hover {
+            background: #38a169;
+        }
+        
+        .submit-container {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f4f8;
+        }
+        
         .submit-button {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             padding: 15px 40px;
+            border-radius: 8px;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
-
+        
         .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
-
-        .workflow-info {
-            background: #fffbeb;
-            border: 1px solid #fbbf24;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
+        
+        .submit-button:active {
+            transform: translateY(0);
         }
-
-        .workflow-info h4 {
-            color: #92400e;
-            margin-bottom: 8px;
-        }
-
-        .workflow-info p {
-            color: #a16207;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
+        
         @media (max-width: 768px) {
             .form-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
             
             .container {
@@ -255,258 +239,220 @@
                 border-radius: 10px;
             }
             
-            .form-container {
-                padding: 20px;
+            .header {
+                padding: 30px 20px;
             }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        .required {
+            color: #e53e3e;
+        }
+        
+        .field-hint {
+            font-size: 0.85rem;
+            color: #718096;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 Customer Call Follow-up</h1>
-            <p>Automated email generation with sales intelligence extraction</p>
-        </div>
-
-        <div class="form-container">
-            <div class="workflow-info">
-                <h4>📋 How this works:</h4>
-                <p>1. Fill out customer details and URLs → 2. Paste call transcript → 3. Claude extracts sales data and generates personalized follow-up email → 4. Everything stored in Supabase for dashboard access</p>
+            <h1>📞 Customer Call Follow-up</h1>
+            <p>Automated follow-up email generation from call transcripts</p>
+            
+            <div class="workflow-explanation">
+                <h3>🤖 How it works:</h3>
+                <p>Paste your call transcript → Claude automatically extracts sales intelligence → Generates personalized follow-up email → All data stored for your dashboard</p>
             </div>
-
-            <form id="callForm">
+        </div>
+        
+        <div class="form-container">
+            <form id="customerCallForm" action="#" method="POST">
+                
                 <!-- Customer Information Section -->
-                <div class="section">
+                <div class="form-section">
                     <div class="section-header">
-                        <div class="section-icon">👤</div>
-                        <div>
-                            <div class="section-title">Customer Information</div>
-                            <div class="section-subtitle">Basic contact details (paste lead info to auto-fill)</div>
+                        <h3>👤 Customer Information</h3>
+                        <p class="section-subtitle">Enter customer details or use the lead paste feature below</p>
+                    </div>
+                    
+                    <!-- Lead Paste Feature -->
+                    <div class="lead-paste-container">
+                        <button type="button" class="toggle-button" onclick="toggleLeadPaste()">
+                            📋 Quick Fill from Lead Info
+                        </button>
+                        <div id="leadPasteArea" class="lead-paste-area">
+                            <h4>Paste lead information here:</h4>
+                            <textarea id="leadPasteText" placeholder="Paste customer details from email, CRM, or any text source..."></textarea>
+                            <button type="button" class="parse-button" onclick="parseLeadInfo()">
+                                🔍 Auto-Fill Customer Fields
+                            </button>
                         </div>
                     </div>
-
-                    <div class="lead-paste-area">
-                        <p style="color: #4a5568; margin-bottom: 10px;">📋 Have lead info to paste? Click below to auto-fill customer details:</p>
-                        <button type="button" class="paste-button" onclick="toggleLeadPaste()">Paste Lead Info</button>
-                        <textarea id="leadPasteArea" class="form-textarea" style="display: none; margin-top: 15px;" placeholder="Paste lead information here and it will auto-fill the customer fields below..."></textarea>
-                    </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group">
-                            <label class="form-label" for="customerName">Customer Name *</label>
-                            <input type="text" id="customerName" name="customerName" class="form-input" required>
+                            <label for="customer_name">Customer Name <span class="required">*</span></label>
+                            <input type="text" id="customer_name" name="customer_name" required>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="customerEmail">Email Address *</label>
-                            <input type="email" id="customerEmail" name="customerEmail" class="form-input" required>
+                            <label for="email_address">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email_address" name="email_address" required>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="phoneNumber">Phone Number</label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-input">
+                            <label for="phone_number">Phone Number</label>
+                            <input type="tel" id="phone_number" name="phone_number">
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="organizationName">Organization Name</label>
-                            <input type="text" id="organizationName" name="organizationName" class="form-input">
+                            <label for="organization_name">Organization Name</label>
+                            <input type="text" id="organization_name" name="organization_name">
                         </div>
                     </div>
                 </div>
-
-                <!-- System Integration Section -->
-                <div class="section">
+                
+                <!-- System URLs Section -->
+                <div class="form-section">
                     <div class="section-header">
-                        <div class="section-icon">🔗</div>
-                        <div>
-                            <div class="section-title">System Links & Trial Info</div>
-                            <div class="section-subtitle">URLs and trial tracking for complete customer record</div>
-                        </div>
+                        <h3>🔗 System URLs</h3>
+                        <p class="section-subtitle">Links to customer records in your tools</p>
                     </div>
-
+                    
                     <div class="form-grid">
                         <div class="form-group">
-                            <label class="form-label" for="hubspotUrl">HubSpot URL</label>
-                            <input type="url" id="hubspotUrl" name="hubspotUrl" class="form-input" placeholder="https://app.hubspot.com/contacts/...">
-                            <div class="help-text">Link to HubSpot contact record</div>
+                            <label for="hubspot_url">HubSpot URL</label>
+                            <input type="url" id="hubspot_url" name="hubspot_url" 
+                                   placeholder="https://app.hubspot.com/contacts/...">
+                            <div class="field-hint">Link to HubSpot contact record</div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="zendeskUrl">Zendesk URL</label>
-                            <input type="url" id="zendeskUrl" name="zendeskUrl" class="form-input" placeholder="https://personifycorp.zendesk.com/...">
-                            <div class="help-text">Link to support ticket</div>
+                            <label for="zendesk_url">Zendesk URL</label>
+                            <input type="url" id="zendesk_url" name="zendesk_url" 
+                                   placeholder="https://personifycorp.zendesk.com/...">
+                            <div class="field-hint">Link to Zendesk ticket or contact</div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="wildApricotUrl">Wild Apricot Site URL</label>
-                            <input type="url" id="wildApricotUrl" name="wildApricotUrl" class="form-input" placeholder="https://organization.wildapricot.org">
-                            <div class="help-text">Customer's Wild Apricot website</div>
+                            <label for="wildapricot_site_url">Wild Apricot Site URL</label>
+                            <input type="url" id="wildapricot_site_url" name="wildapricot_site_url" 
+                                   placeholder="https://organization.wildapricot.org">
+                            <div class="field-hint">Customer's Wild Apricot website</div>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label class="form-label" for="trialEndDate">Trial End Date</label>
-                            <input type="date" id="trialEndDate" name="trialEndDate" class="form-input">
-                            <div class="help-text">When does their trial expire?</div>
+                            <label for="trial_end_date">Trial End Date</label>
+                            <input type="date" id="trial_end_date" name="trial_end_date">
+                            <div class="field-hint">When their trial expires</div>
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Call Transcript Section -->
-                <div class="section">
+                <div class="form-section">
                     <div class="section-header">
-                        <div class="section-icon">📝</div>
-                        <div>
-                            <div class="section-title">Call Transcript</div>
-                            <div class="section-subtitle">Paste transcript from Vibe for Claude to analyze</div>
-                        </div>
+                        <h3>📝 Call Transcript</h3>
+                        <p class="section-subtitle">Paste the full transcript from your call recording</p>
                     </div>
-
+                    
                     <div class="form-group full-width">
-                        <label class="form-label" for="callTranscript">Call Transcript *</label>
-                        <textarea id="callTranscript" name="callTranscript" class="form-textarea transcript-textarea" required placeholder="Paste the call transcript from Vibe here...
+                        <label for="call_transcript">Call Transcript <span class="required">*</span></label>
+                        <textarea id="call_transcript" name="call_transcript" required 
+                                  placeholder="Paste your Vibe transcript here...
 
 Claude will automatically extract:
 • Sales notes and summary
-• Contact count mentioned
-• Go-live timeline
+• Contact count mentioned  
+• Go live timeline
 • Next steps customer is taking
 • Potential roadblocks
 • How the call ended
 • What follow-ups you promised"></textarea>
-                        <div class="help-text">📋 This is where Claude works its magic - extracting all sales intelligence automatically</div>
                     </div>
                 </div>
-
-                <!-- Claude-Extracted Fields Section -->
-                <div class="section claude-section">
-                    <div class="section-header">
-                        <div class="section-icon">🤖</div>
-                        <div>
-                            <div class="section-title">Claude-Extracted Sales Intelligence</div>
-                            <div class="section-subtitle">These fields will be populated automatically from your transcript</div>
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group full-width">
-                            <label class="form-label">Notes (At-a-Glance Summary)</label>
-                            <div class="claude-field">Claude will generate a concise summary of key discussion points</div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Contact Count</label>
-                            <div class="claude-field">Number mentioned during call</div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Go Live Date</label>
-                            <div class="claude-field">Timeline mentioned (e.g., "this summer")</div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label class="form-label">Next Steps</label>
-                            <div class="claude-field">What the customer is planning to do next</div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label class="form-label">Potential Blocks</label>
-                            <div class="claude-field">Issues that could prevent them from moving forward</div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label class="form-label">How We Left It</label>
-                            <div class="claude-field">How the conversation concluded</div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label class="form-label">Promised Follow-ups</label>
-                            <div class="claude-field">Resources and information you committed to send</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Submit Section -->
-                <div class="submit-section">
+                
+                <!-- Submit Button -->
+                <div class="submit-container">
                     <button type="submit" class="submit-button">
                         🚀 Generate Follow-up Email & Store Data
                     </button>
-                    <p style="margin-top: 15px; color: #718096; font-size: 0.9rem;">
-                        This will send data to N8N → Claude extracts sales intelligence → Generates personalized email → Stores everything in Supabase
-                    </p>
                 </div>
+                
             </form>
         </div>
     </div>
-
+    
     <script>
         function toggleLeadPaste() {
-            const pasteArea = document.getElementById('leadPasteArea');
-            const button = document.querySelector('.paste-button');
-            
-            if (pasteArea.style.display === 'none') {
-                pasteArea.style.display = 'block';
-                button.textContent = 'Hide Lead Paste Area';
-                button.style.background = 'linear-gradient(135deg, #e53e3e 0%, #c53030 100%)';
-            } else {
-                pasteArea.style.display = 'none';
-                button.textContent = 'Paste Lead Info';
-                button.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
-            }
+            const area = document.getElementById('leadPasteArea');
+            area.classList.toggle('active');
         }
-
-        // Auto-fill logic for lead paste area
-        document.getElementById('leadPasteArea').addEventListener('input', function() {
-            const leadText = this.value.toLowerCase();
+        
+        function parseLeadInfo() {
+            const leadText = document.getElementById('leadPasteText').value;
             
-            // Simple parsing - can be enhanced
-            const lines = this.value.split('\n');
+            // Simple parsing logic - you can enhance this
+            const lines = leadText.split('\n');
             
             lines.forEach(line => {
-                if (line.toLowerCase().includes('@')) {
-                    document.getElementById('customerEmail').value = line.trim();
+                line = line.trim();
+                
+                // Email detection
+                const emailMatch = line.match(/[\w\.-]+@[\w\.-]+\.\w+/);
+                if (emailMatch && !document.getElementById('email_address').value) {
+                    document.getElementById('email_address').value = emailMatch[0];
                 }
-                if (line.toLowerCase().includes('name:') || line.toLowerCase().includes('contact:')) {
-                    const name = line.replace(/name:|contact:/gi, '').trim();
-                    if (name) document.getElementById('customerName').value = name;
+                
+                // Phone detection  
+                const phoneMatch = line.match(/[\+]?[\d\s\(\)\-]{10,}/);
+                if (phoneMatch && !document.getElementById('phone_number').value) {
+                    document.getElementById('phone_number').value = phoneMatch[0].trim();
                 }
-                if (line.toLowerCase().includes('organization:') || line.toLowerCase().includes('company:')) {
-                    const org = line.replace(/organization:|company:/gi, '').trim();
-                    if (org) document.getElementById('organizationName').value = org;
+                
+                // Organization detection (lines with common business words)
+                if ((line.includes('Inc') || line.includes('LLC') || line.includes('Corp') || 
+                     line.includes('Company') || line.includes('Organization')) && 
+                    !document.getElementById('organization_name').value) {
+                    document.getElementById('organization_name').value = line;
                 }
-                if (line.toLowerCase().includes('phone:') || line.match(/\d{3}-\d{3}-\d{4}/)) {
-                    const phone = line.replace(/phone:/gi, '').trim();
-                    if (phone) document.getElementById('phoneNumber').value = phone;
+                
+                // Name detection (first line that looks like a name)
+                if (line.match(/^[A-Z][a-z]+ [A-Z][a-z]+/) && 
+                    !document.getElementById('customer_name').value &&
+                    !line.includes('@') && !line.includes('Inc')) {
+                    document.getElementById('customer_name').value = line;
                 }
             });
-        });
-
-        // Form submission
-        document.getElementById('callForm').addEventListener('submit', function(e) {
+            
+            // Clear the paste area after parsing
+            document.getElementById('leadPasteText').value = '';
+            document.getElementById('leadPasteArea').classList.remove('active');
+        }
+        
+        // Form submission handling
+        document.getElementById('customerCallForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Collect form data
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const data = Object.fromEntries(formData);
             
-            // Add timestamp
-            data.timestamp = new Date().toISOString();
-            
-            // Here you would send to N8N webhook
+            // Here's where the N8N webhook will be called
             console.log('Form data ready for N8N:', data);
             
-            // Show success message
-            alert('Form submitted! In production, this will:\n\n1. Send data to N8N webhook\n2. Claude extracts sales intelligence\n3. Generates personalized follow-up email\n4. Stores everything in Supabase\n5. Email appears in Retool dashboard for copy/paste');
-        });
-
-        // Form validation enhancements
-        document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.required && !this.value.trim()) {
-                    this.style.borderColor = '#e53e3e';
-                } else {
-                    this.style.borderColor = '#e2e8f0';
-                }
-            });
+            // Placeholder for now - will be replaced with actual webhook URL
+            alert('Form submitted! In Sprint 2, this will trigger the N8N automation workflow.');
         });
     </script>
 </body>
