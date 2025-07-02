@@ -439,6 +439,36 @@ Claude will automatically extract:
             document.getElementById('leadPasteText').value = '';
             document.getElementById('leadPasteArea').classList.remove('active');
         }
+
+        // Form submission handling
+        document.getElementById('customerCallForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form data ready for Edge Function:', data);
+            
+            // Call the Edge Function with proper headers
+            fetch('https://gnpzqjmeiusniabmxomt.supabase.co/functions/v1/test-env', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImducHpxam1laXVzbmlhYm14b210Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc3Nzc1NDAsImV4cCI6MjA2MzM1MzU0MH0.JnL0eLrvcJ3Fo2eEkMM9pHvX6VKfJmgxy9gJNEnV_84'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Edge Function response:', result);
+                alert('✅ Success! Check console for response details.');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('❌ Error: ' + error.message);
+            });
+        });
     </script>
 </body>
 </html>
